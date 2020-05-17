@@ -25,19 +25,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        android:textColor="@android:color/darker_gray"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         android:transformPivotX="0dp"
         android:transformPivotY="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/navigationIcon"
-        tools:text="Which items would you like to return?" />
+        tools:text="This is a multiline example text" />
 
     <View
         android:id="@+id/separator"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/darker_gray"
         app:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
