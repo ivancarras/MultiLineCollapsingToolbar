@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/collapsingTransition"
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/scrollView"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="1" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="70"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="2" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="60"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="3" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="4" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="5" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="30"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="6" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="20"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="7" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="10"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="8" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@id/title">
+                <CustomAttribute
+                    app:attributeName="maxLines"
+                    app:customIntegerValue="9" />
+            </KeyAttribute>
+
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0.0"
+                app:framePosition="0"
+                app:motionTarget="@id/separator" />
+
+            <KeyAttribute
+                android:alpha="0.0"
+                app:framePosition="80"
+                app:motionTarget="@id/separator" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:visibility="visible"
+                app:framePosition="100"
+                app:motionTarget="@id/separator" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/expanded">
+        <Constraint
+            android:id="@id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_default"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/spacing_default"
+            android:layout_marginBottom="0dp"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigationIcon" />
+        <Constraint
+            android:id="@id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+        <Constraint android:id="@id/loading">
+            <PropertySet
+                app:applyMotionScene="false"
+                app:visibilityMode="ignore" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+        <Constraint
+            android:id="@id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:scaleX="0.615"
+            android:scaleY="0.615"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/navigationIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigationIcon" />
+        <Constraint android:id="@id/loading">
+            <PropertySet
+                app:applyMotionScene="false"
+                app:visibilityMode="ignore" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

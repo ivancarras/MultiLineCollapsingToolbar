@@ -1,2 +1,3 @@
+include ':multiline-collapsing-toolbar'
 include ':app'
 rootProject.name = "MultilineCollapsingToolbar"
